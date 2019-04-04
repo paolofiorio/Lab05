@@ -27,9 +27,11 @@ public class AnagrammaDAO {
 			
 			ResultSet res = st.executeQuery() ;
 			
+			//la parola cercata esiste nel dizionario
 			if(res.next()) {
 				result = true;
 				
+			//la parola cercata non esiste nel dizionario
 			} else {
 				result = false;
 			}

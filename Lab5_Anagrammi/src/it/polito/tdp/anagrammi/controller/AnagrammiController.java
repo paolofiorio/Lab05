@@ -41,11 +41,14 @@ public class AnagrammiController {
     void doCalcola(ActionEvent event) {
     	txtCorretti.clear();
     	txtErrati.clear();
+    	//aggiungo al set gli anagrammi trovati
     	Set<String> anagrammi = this.model.calcolaAnagrammi(txtParola.getText());
-    	
+    	//ciclo nel set
     	for(String s : anagrammi){
+    		//se l'anagramma è corretto lo aggiungo nell'area Corretti
     		if(this.model.isCorrect(s))
     			txtCorretti.appendText(s + "\n");
+    		//se è errato lo aggiungo nell'area Errati
     		else
     			txtErrati.appendText(s + "\n");
     	}
